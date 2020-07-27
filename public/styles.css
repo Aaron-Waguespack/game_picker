@@ -1,0 +1,83 @@
+body {width: 100%; height: 100%;}
+
+.main{
+    background-color: rgb(74, 74, 99);
+    padding-left: 5px;;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.formTitle{
+    font-weight: 700;
+    font-size:larger ;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+}
+.game-wrapper {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+.header_image {
+    margin-top: 1em;
+    width: auto;
+    height:100px;
+    padding:0px 10px 0px 10px;
+}
+
+h3 {
+    margin:.5em 0em .5em 0em;
+}
+
+.gameform{
+    font-family:'Courier' ;
+    height:100px;
+    color: whitesmoke;
+    margin-bottom: 10px;
+
+}
+.gameList{
+padding-top: 15px;
+padding-bottom: 15px;
+height: auto;
+flex: 1;
+
+}
+.card{
+    font-family:'Courier' ;
+    color: whitesmoke;
+-webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+}
+.gameCard{
+
+    text-align: center;
+    background-color: rgba(5, 80, 177, 0.678);
+    display:inline-block;
+    border-radius:.5rem;
+    padding:var(--spacing-medium);
+    margin:5px;
+    border-width:.5rem;
+    box-shadow:4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
+}
+
+.gameSelector{
+    vertical-align: top;
+    background-color: rgb(74, 74, 99);
+    height:10em;
+    vertical-align: top;
+    font-family:'Courier' ;
+    color: whitesmoke;
+}
+
+.pickButton{
+margin-left:10px;
+}
+
+.genre{
+    display: inline-block;
+    padding: 10px;
+}
