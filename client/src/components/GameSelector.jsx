@@ -9,47 +9,47 @@ function GameSelector(props){
             <div>
               <div className="genre">
             <input type="checkbox" id="action"></input>
-            <label for="action">Action</label>
+            <label htmlFor="action">Action</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="adventure"></input>
-            <label for="adventure">Adventure</label>
+            <label htmlFor="adventure">Adventure</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="casual"></input>
-            <label for="casual">Casual</label>
+            <label htmlFor="casual">Casual</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="indie"></input>
-            <label for="indie">Indie</label>
+            <label htmlFor="indie">Indie</label>
             </div>
              <div className="genre">
             <input type="checkbox" id="mmo"></input>
-            <label for="mmo">MMO</label>
+            <label htmlFor="mmo">MMO</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="racing"></input>
-            <label for="racing">Racing</label>
+            <label htmlFor="racing">Racing</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="rpg"></input>
-            <label for="rpg">RPG</label>
+            <label htmlFor="rpg">RPG</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="simulation"></input>
-            <label for="simulation">Simulation</label>
+            <label htmlFor="simulation">Simulation</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="sports"></input>
-            <label for="sports">Sports</label>
+            <label htmlFor="sports">Sports</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="strategy"></input>
-            <label for="strategy">Strategy</label>
+            <label htmlFor="strategy">Strategy</label>
             </div>
             <div className="genre">
             <input type="checkbox" id="vr"></input>
-            <label for="vr">VR</label>
+            <label htmlFor="vr">VR</label>
             </div>
             </div>
             <button className="pickButton">Pick Game</button>

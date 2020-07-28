@@ -1,18 +1,29 @@
-body {width: 100%; height: 100%;}
+/* body {width: 100%; height: 95vh;} */
 
 .main{
     background-color: rgb(74, 74, 99);
     padding-left: 5px;;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    height: 95vh;
+    width: 100%;
 }
 
+.titlebar{
+    height: 70px;
+    background-color: rgb(41, 41, 59);
+}
+
+.title{
+
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: underline;
+}
 .formTitle{
+    padding-top: 10px;
     font-weight: 700;
     font-size:larger ;
-    margin-top: 10px;
     margin-bottom: 5px;
 
 }
@@ -36,7 +47,7 @@ h3 {
     font-family:'Courier' ;
     height:100px;
     color: whitesmoke;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 
 }
 .gameList{
@@ -44,16 +55,21 @@ padding-top: 15px;
 padding-bottom: 15px;
 height: auto;
 flex: 1;
-
+overflow-y: scroll;
+max-height:600px
 }
+
 .card{
     font-family:'Courier' ;
     color: whitesmoke;
 -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
-}
-.gameCard{
 
+}
+
+.gameCard{
+ width: 250px;
+ height: 300px;
     text-align: center;
     background-color: rgba(5, 80, 177, 0.678);
     display:inline-block;
@@ -65,6 +81,7 @@ flex: 1;
 }
 
 .gameSelector{
+    margin-top: 10px;
     vertical-align: top;
     background-color: rgb(74, 74, 99);
     height:10em;
@@ -81,3 +98,30 @@ margin-left:10px;
     display: inline-block;
     padding: 10px;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(5, 80, 177, 0.678);
+  border-radius: 10px;
+  border-color: white;
+  border:2px;
+  height: 2em;
+  -webkit-box-shadow: inset 0 0 6px rgba(252, 249, 249, 0.993);
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 2px 2px 5px white;
+    border-radius: 10px;
+
+  }
+
+
+
+

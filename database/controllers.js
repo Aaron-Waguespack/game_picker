@@ -1,17 +1,24 @@
-const GameDB = require('./schema.js');
+const GamesDB = require('./schema.js');
 
-exports.getGames=(req, res)=>{
-  RsvpDB.find()
-    .then(data => {res.send(data)});
- }
+exports.getGames=(steamId, steamKey)=>{
+  fetch(`http://api.steampowered.com/IPlayerService/GetOwnedGames/
+        v0001/?format=json&key=${steamKey}&steamid=${steamId}`)
+  .then(response=> response.json())
+  .then(games.map((game)=>{
+     let newGame = new GamesDB({
+      appid: game.appid,
+      name:"" ,
+      header_image: "",
+      short_description: "",
+    })
+    newGame.save()
+  }))
+}
 
  exports.addGames = (req, res)=>{
-    let newGame = new GameDB({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      guests: req.body.guests,
-    })
+
     newGame.save()
     .then(data => {res.send(data)})
   }
+//  GamesDB.find()
+//     .then(data => {res.send(data)});
