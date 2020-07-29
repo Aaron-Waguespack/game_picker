@@ -16,19 +16,27 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../public'));
 
-app.get('/testroute/', (req, res, next) => {
-  axios.get('http://store.steampowered.com/api/appdetails/?appids=39550')
+
+
+app.get('/testroute/:key/:id', (req, res, next) => {
+  axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?format=json&key=${req.params.key}&steamid=${req.params.id}`)
     .then((steamresult) => {
-      console.log('we apid')
-      console.log(steamresult.status)
-      console.log(steamresult.data['39550'].data.name) //number is id
-
-      // res.send(data)
+      games = steamresult.data.response.games
+      console.log('Games',games)
+        games.map((game)=>{
+         let newGame = new GamesDB({
+          appid: game.appid,
+          name:"" ,
+          header_image: "",
+          short_description: "",
+        })
+        console.log("newGame",newGame)
+        newGame.save()
     })
-    .catch((err) => console.log(err))
-
-
 })
+  .catch((err) => console.log(err))
+})
+
 
 app.get('/games', controllers.getGames);
 app.post('/games', controllers.addGames);
