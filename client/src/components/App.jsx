@@ -62,42 +62,12 @@ class App extends React.Component {
       return gameObj
     }
 
-
-
     getGames(gameObj) {
       fetch(`/testroute/${gameObj.steamKey}/${gameObj.steamId}`)
         .then((res) => res.json())
         .then((data) => console.log(data))
         .catch( (err) => console.log(err))
     }
-
-
-
-
-    zzzzz(gameObj){
-      fetch("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?format=json&key=0C9BE31E8018AC860AA04406D9DF6736&steamid=76561198032968660", {method:'GET'})
-      // .then(tempgame.map((game)=>{
-      //    let newGame = new GamesDB({
-      //     appid: game.appid,
-      //     name:"" ,
-      //     header_image: "",
-      //     short_description: "",
-      //   })
-      //   console.log("newGame",newGame)
-      //   newGame.save()
-      // }))
-      .then(response =>{return response.json()})
-      .catch((error) => {
-        console.log('There has been a problem with your fetch operation: ' + error);
-      })
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.log('There has been a problem with your fetch operation: ' + error);
-      })
-    }
-
 
     render() {
       return(
@@ -110,7 +80,7 @@ class App extends React.Component {
           <div> Steam Id:</div>
           <input id="steamId" type="text" defaultValue ="76561198032968660"/>
           <div>Steam API Key</div>
-          <input id="steamKey" type="text" defaultValue ="0C9BE31E8018AC860AA04406D9DF6736"/>
+          <input id="steamKey" type="password" defaultValue ="0C9BE31E8018AC860AA04406D9DF6736"/>
           <button>Submit</button>
       </form>
 		<GameList games={this.state.games}/>

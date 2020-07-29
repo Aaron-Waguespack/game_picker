@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const GamesDB = require('../database/schema.js');
-const controllers = require('../database/controllers.js');
+// const controllers = require('../database/controllers.js');
 const morgan = require('morgan') //
 const axios = require('axios') //
 
@@ -17,29 +17,31 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../public'));
 
 
-
 app.get('/testroute/:key/:id', (req, res, next) => {
   axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?format=json&key=${req.params.key}&steamid=${req.params.id}`)
-    .then((steamresult) => {
-      games = steamresult.data.response.games
-      console.log('Games',games)
-        games.map((game)=>{
-         let newGame = new GamesDB({
-          appid: game.appid,
-          name:"" ,
-          header_image: "",
-          short_description: "",
+    .then((steamUserInfo) => {
+      let gameList = steamUserInfo.data.response.games
+      gameList.map((game)=>{
+        axios.get(`http://store.steampowered.com/api/appdetails/?appids=${game.appid}`)
+        .then((steamGameInfo) => {
+          let gameInfo = steamGameInfo.data[`${game.appid}`].data
+          let newGame = new GamesDB({
+            appid: game.appid,
+            name:gameInfo.name ,
+            header_image: gameInfo.header_image,
+            short_description: gameInfo.short_description,
+          })
+          console.log("newGame",newGame);
+          newGame.save()
         })
-        console.log("newGame",newGame)
-        newGame.save()
+      })
     })
-})
   .catch((err) => console.log(err))
 })
 
 
-app.get('/games', controllers.getGames);
-app.post('/games', controllers.addGames);
+// app.get('/games', controllers.getGames);
+// app.post('/games', controllers.addGames);
 
 
 app.listen(PORT, () => {
