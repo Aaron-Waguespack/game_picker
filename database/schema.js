@@ -5,7 +5,7 @@ const {Schema} = mongoose
 const gamesSchema = new Schema({
   appid: { type: Number, index: { unique: true } },
   name: String,
-  genres: String,
+  genres: Array,
   header_image: String,
   short_description:String
 });
@@ -13,3 +13,4 @@ const gamesSchema = new Schema({
 const GamesDB = mongoose.model('GamesDB', gamesSchema);
 
 module.exports = GamesDB;
+

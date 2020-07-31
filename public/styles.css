@@ -10,7 +10,7 @@
 }
 
 .titlebar{
-    height: 70px;
+    height: 75px;
     background-color:   #052d90;
 }
 
@@ -73,7 +73,7 @@ max-height:600px
 .gameCard{
     background-image: linear-gradient(to right top, #08046d, #071076, #071b7f, #062487, #052d90, #0044a0, #005aae, #006fba, #3f94c8, #7ab8d3, #b7d9e1, #f7f8f8);
     width: 250px;
- height: 150px;
+ height: 200px;
     text-align: center;
     /* background-color: rgba(5, 80, 177, 0.678); */
     display:inline-block;

@@ -8,47 +8,59 @@ function GameSelector(props){
         <form>
             <div>
               <div className="genre">
-            <input type="checkbox" id="action"></input>
+            <input type="checkbox" id="Action"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="action">Action</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="adventure"></input>
+            <input type="checkbox" id="Adventure"
+                 onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="adventure">Adventure</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="casual"></input>
+            <input type="checkbox" id="casual"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="casual">Casual</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="indie"></input>
+            <input type="checkbox" id="Indie"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="indie">Indie</label>
             </div>
              <div className="genre">
-            <input type="checkbox" id="mmo"></input>
+                 {/* //Massively Multiplayer */}
+            <input type="checkbox" id="mmo"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="mmo">MMO</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="racing"></input>
+            <input type="checkbox" id="Racing"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="racing">Racing</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="rpg"></input>
+            <input type="checkbox" id="RPG"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="rpg">RPG</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="simulation"></input>
-            <label htmlFor="simulation">Simulation</label>
+            <input type="checkbox" id="Simulation"
+                onChange ={(e) => props.handleChange(e)}></input>
+            <label htmlFor="Simulation">Simulation</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="sports"></input>
+            <input type="checkbox" id="Sports"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="sports">Sports</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="strategy"></input>
+            <input type="checkbox" id="Strategy"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="strategy">Strategy</label>
             </div>
             <div className="genre">
-            <input type="checkbox" id="vr"></input>
+            <input type="checkbox" id="VR"
+                onChange ={(e) => props.handleChange(e)}></input>
             <label htmlFor="vr">VR</label>
             </div>
             </div>

@@ -19,7 +19,7 @@ function Game(props) {
             <Card.Body className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
                 <Image src={props.game.header_image} className="header_image"/>
                 <Card.Title className="card">{props.game.name}</Card.Title>
-                <Card.Text className="card">{props.game.short_description.replace(/&quot;/g,'"')}</Card.Text>
+                {/* <Card.Text className="card">{props.game.short_description.replace(/&quot;/g,'"')}</Card.Text> */}
             </Card.Body>
         </Card>
         </Col>
