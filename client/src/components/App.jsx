@@ -21,6 +21,7 @@ class App extends React.Component {
 		.then(response=> response.json())
 		.then(data => this.setState({games:data}))
 		.then(console.log("Fetched"))
+		.catch( (err) => console.log("fetcher Err", err))
 		}
 
 allUnchecked(){
@@ -46,9 +47,16 @@ allUnchecked(){
     getGames(gameObj) {
       fetch(`/testroute/${gameObj.steamKey}/${gameObj.steamId}`)
         .then((res) => res.json())
-				.then((data) => console.log(data.status))
-        .catch( (err) => console.log(err))
-    }
+				.then((data) => console.log("get games", data))
+				.catch( (err) => console.log("get games", err))
+				.then(this.gamedbFetcher())
+				.catch( (err) => console.log("get games", err))
+				}
+
+	componentDidUpdate(prevProps, prevState) {
+					if (prevState.games !== this.state.pokemons) {
+						this.gamedbFetcher()
+					}}
 
 		gameFilter(){
 		let gms =this.state.games;
