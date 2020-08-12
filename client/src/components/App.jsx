@@ -24,7 +24,7 @@ class App extends React.Component {
 		.catch( (err) => console.log("fetcher Err", err))
 		}
 
-allUnchecked(){
+ 	allUnchecked(){
 		let checked = document.querySelectorAll('input:checked');
 		if (checked.length === 0) {
 			this.setState({filteredGames:this.state.games});
@@ -49,10 +49,8 @@ allUnchecked(){
         .then((res) => res.json())
 				.then((data) => console.log("get games", data))
 				.catch( (err) => console.log("get games", err))
-				.then(this.gamedbFetcher())
 				.catch( (err) => console.log("get games", err))
 				}
-
 	componentDidUpdate(prevProps, prevState) {
 					if (prevState.games !== this.state.pokemons) {
 						this.gamedbFetcher()
@@ -67,7 +65,7 @@ allUnchecked(){
 									genre => {
 										return selected.includes(genre)})})
 		return fg
-	}
+		}
 
 	handleChange(e) {
 		let isChecked = e.target.checked;
@@ -88,7 +86,6 @@ allUnchecked(){
 			this.allUnchecked();
 			}
 		}
-
 
     render() {
       return(
