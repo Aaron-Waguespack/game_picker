@@ -14,7 +14,7 @@ Add button to select a random game.
 React, Node, Express, Bootstrap
 
 ### Screenshot of Game Picker
-![MVP1](/MVP1.png)
+![mvp1](/mvp1.png)
 
 ### Usage
 To run this repo, you will need to install dependencies "npm install" and run "npm start" script
