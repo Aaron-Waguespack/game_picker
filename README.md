@@ -3,7 +3,7 @@
 
 ### Project Goals
 Create a steam game picker.
-Using the Steam games API download a users game libray, match that with game information. Disply each game in a card that is filterable by genre.
+Using the Steam games API, download a users game libray. Then match libray info with game information. Disply each game in a card that is filterable by genre.
 
 ### Next steps:
 Add modal for additonal info when clicking on a individual game.
