@@ -18,8 +18,9 @@ class App extends React.Component {
 	}
 
 	gamedbFetcher(){
+		let gms = "games"
 		if(this.state.loaded===false){
-		fetch('http://localhost:3000/games')
+		fetch(`https://gamepicker-01.herokuapp.com/${gms}`)
 		.then(response=> response.json())
 		.then(data => this.setState({games:data}))
 		.then(console.log("Fetched - App"))
