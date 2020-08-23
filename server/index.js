@@ -78,7 +78,7 @@ app.get('/testroute/:key/:id', (req, res, next) => {
 // app.post('/games', controllers.addGames);
 
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`listening on port ${PORT}`);
 });
 
