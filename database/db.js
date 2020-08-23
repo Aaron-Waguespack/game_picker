@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 module.exports = mongoose
-  .connect('mongodb://localhost:27017/GamesDB', {
+  .connect('mongodb://heroku_nqqnrdk0:38b94pqjev0vrrb1nndmhma60i@ds127802.mlab.com:27802/heroku_nqqnrdk0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
