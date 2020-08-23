@@ -10,6 +10,7 @@ class App extends React.Component {
 		  games:[],
 		selectedGenres:[],
 		filteredGames:[],
+		loaded:false
 		}
 		this.handleChange = this.handleChange.bind(this);
 		this.gameFilter = this.gameFilter.bind(this);
@@ -17,12 +18,14 @@ class App extends React.Component {
 	}
 
 	gamedbFetcher(){
+		if(this.state.loaded===false){
 		fetch('http://localhost:3000/games')
 		.then(response=> response.json())
 		.then(data => this.setState({games:data}))
-		.then(console.log("Fetched"))
+		.then(console.log("Fetched - App"))
 		.catch( (err) => console.log("fetcher Err", err))
 		}
+	}
 
  	allUnchecked(){
 		let checked = document.querySelectorAll('input:checked');
@@ -32,6 +35,8 @@ class App extends React.Component {
 
 	  componentDidMount(){
 			this.gamedbFetcher()
+			this.setState({loaded:true})
+			console.log(this.state.loaded)
 	  }
 
     gameFormObj(){
