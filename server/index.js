@@ -48,35 +48,6 @@ app.get('/testroute/:key/:id', (req, res, next) => {
   .catch((err) => console.log(err))
 })
 
-// app.get('/testroute/:key/:id', (req, res, next) => {
-//   // axios.get(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?format=json&key=${req.params.key}&steamid=${req.params.id}`)
-//   //   .then((steamUserInfo) => {
-//   //     let gameList = steamUserInfo.data.response.games
-//   //     gameList.map((game)=>{
-//         axios.get(`http://store.steampowered.com/api/appdetails/?appids=39550`)
-//         .then((steamGameInfo) => {
-//           let gameInfo = steamGameInfo.data[39550].data
-//           let newGame = new GamesDB({
-//             appid: 39550,
-//             name:gameInfo.name ,
-//             header_image: gameInfo.header_image,
-//             short_description: gameInfo.short_description,
-//             genres:gameInfo.genres.map((genre)=>genre.description)
-//           })
-//           // console.log("newGame",newGame);
-//           newGame.save()
-//         })
-//         .catch((err) => console.log(err))
-//       // })
-//       console.log("test");
-//       return res.send({status:true})
-//     // })
-//   // .catch((err) => console.log(err))
-// })
-
-// app.get('/games', controllers.getGames);
-// app.post('/games', controllers.addGames);
-
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`listening on port ${PORT}`);
