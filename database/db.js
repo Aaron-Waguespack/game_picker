@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const password = require('./data.js');
 
 module.exports = mongoose
-  .connect('mongodb+srv://AaronWaguespack:'password'@gamepicker.1d4hk.mongodb.net/test', {
+  .connect(ENV['databaseURL'], {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
