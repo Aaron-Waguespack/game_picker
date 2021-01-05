@@ -97,7 +97,7 @@ class App extends React.Component {
       return(
 	<div className="main">
     <div className='titlebar'>
-    <h1 className="title">Steam Game Picker?</h1>
+    <h1 className="title">Steam Game Picker</h1>
     </div>
       <form className="gameform" onSubmit={(event)=>{
 				this.getGames(this.gameFormObj(),event)}}>
