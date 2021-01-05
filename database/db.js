@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const password = require('./data.js');
+
 
 module.exports = mongoose
-  .connect(ENV['databaseURL'], {
+  .connect(process.env.databaseURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
